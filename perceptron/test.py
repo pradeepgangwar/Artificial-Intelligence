@@ -1,5 +1,6 @@
 import numpy as np
 
+threshold = 0.2
 
 def activation_fn(sum):
     ''' Step Function '''
@@ -10,7 +11,7 @@ def activation_fn(sum):
 
 def predict(data, weights):
     ''' Calculate the weighted sum '''
-    weighted_sum = weights.T.dot(data)
+    weighted_sum = weights.T.dot(data) - threshold
     a = activation_fn(weighted_sum)
     return a
 
