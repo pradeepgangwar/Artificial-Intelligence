@@ -32,7 +32,7 @@ class NeuralNetwork(object):
     return s * (1 - s)
 
   def forward(self, X):
-    # forward propogate the calculations
+    # forward propagate the calculations
     self.z1 = np.dot(X, self.w1)
     self.z2 = self.sigmoid(self.z1)
     self.z3 = np.dot(self.z2, self.w2)
@@ -40,7 +40,7 @@ class NeuralNetwork(object):
     return self.o
 
   def backward(self, X, y, o):
-    # backward propgate through the network
+    # backward propagate through the network
     self.o_error = y - o
     self.o_delta = self.o_error*self.sigmoidPrime(o)
     self.z2_error = self.o_delta.dot(self.w2.T)

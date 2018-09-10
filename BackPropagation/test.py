@@ -12,7 +12,7 @@ def sigmoid(s):
 
 
 def test(X):
-  # forward propogate the calculations
+  # forward propagate the calculations
   z1 = np.dot(X, w1)
   z2 = sigmoid(z1)
   z3 = np.dot(z2, w2)
